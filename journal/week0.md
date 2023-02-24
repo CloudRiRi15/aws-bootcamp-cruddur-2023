@@ -6,7 +6,8 @@
 **to insert napkin image as proof of work done**
 
 ### Generating AWS Credentials
-**install CLI**
+**Install AWS CLI via Gitpod**
+
 
 
 
