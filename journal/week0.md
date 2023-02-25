@@ -11,6 +11,7 @@
 
 
 
+
 ### Set an AWS Budget
 From the root account, grant the IAM user billing access and permissions. **NB** if you do not grant the IAM user billing access, the IAM user will not be able to access the billing console. 
 
@@ -26,6 +27,15 @@ Under Template, I selected the Zero Spend Budget and **Click Create Budget**
 **to insert budget image as proof of work done**
 
 ### Set a Billing Alarm
+
+For the task of creating a billing I chose to use the AWS CLI.Inorder for you to create a billing alarm you will need to firstly  I followed the following steps to achieve this
+
+Step 1
+
+Create an SNS Topic
+
+
+
 **to insert billing image as proof of work done**
 
 ### Using CloudShell
