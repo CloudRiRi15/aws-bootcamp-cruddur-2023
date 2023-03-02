@@ -1,6 +1,6 @@
 # Introduction
 
-I got enrolled in the 15-week Free AWS Project BootCamp with AWS Community Hero Andrew Brown, The purpose of this BootCamp is to bridge the gap between Certification and actual real world work experience for students who have acquired an associate level certification. I am excited to be part of this great opportunity and plan to be part of each and every part of the process and learn as much as I can and stretch myself to gain actual real work exprience.
+I got enrolled in the 15-week Free AWS Project BootCamp with AWS Community Hero Andrew Brown. The purpose of this BootCamp is to bridge the gap between Certification and actual real world work experience for students who have acquired an associate level certification. I am excited to be part of this great opportunity and plan to be part of each and every part of the process and learn as much as I can and stretch myself to gain actual real work exprience.
 
 **to insert project Bootcamp goal screenshots**
 
@@ -33,19 +33,19 @@ The startup company has spent the majority of their funding on hiring you for th
 
 ### Personal Challenges: *I Can't attend BootCamp from Day 1* :sob::sob:
  
-Right off the bet, I am faced with some personal challenges which will require my full attention over the next 3-weeks or so, this is going to affect my full participation during this period and it has proven to be very discouraging. I am consoled and encouraged at the fact that after speaking to the BootCamp Organizer, Anmdrew Brown, he was very understanding and is willing to give me considerations with homework submissions. I am however to ensure that I document that in the student portal under the considerations.
+Right off the bet, I am faced with some personal challenges which will require my full attention over the next 3-weeks or so, this is going to affect my full participation during this period and it has proven to be very discouraging. I am consoled and encouraged at the fact that after speaking to the BootCamp Organizer, Andrew Brown, he was very understanding and is willing to give me considerations with homework submissions. I am however to ensure that I document that in the student portal under the considerations.
 
 ## Challenge No. 2
 
 ### GitHub *What is this and how do I use it* :thinking:
 
- Yes I said GitHub. To be precise writing a Markdown file and basic technical writing skills. I am finding that I am struggling with what to include or not include in my journal. How detailed should the information be just how much to put and what to leave out. After careful study *over a week long* I think I have sort of figured it out. Here is a list of some of the resources I used to help me with GitHub and Technical Documentation can be found here **to insert a link of all the resources used**.I thought to myself since the goal of this BootCamp is for an associate level certification holder to build a cloud project with enough complexity to merit worthiness on their resume and combine multiple cloud services to emulate a real-world production workload, I am going to make sure that I document my project journey with as much details as possible while kaing it as easy to read and understand as possible using simple language to explain complex technical processess.
+ Yes I said GitHub. To be precise writing a markdown files and basic technical writing skills. I am finding that I am struggling with what to include or not include in my journal. How detailed should the information be, just how much to put and what to leave out. After careful study *over a week long* I think I have sort of figured it out. Here is a list of some of the resources I used to help me with GitHub and Technical Documentation, can be found here **to insert a link of all the resources used**.I thought to myself since the goal of this BootCamp is to help an associate level certification holder to build a cloud project with enough complexity to merit worthiness on their resume and combine multiple cloud services to emulate a real-world production workload, I am going to make sure that I document my project journey with as much details as possible while making it as easy to read and understand as possible, using simple language to explain complex technical processess.
 
   ## Challenge No. 3
   
   ### Playing Catch-Up :running_woman::running_woman:
   
-I finally managed to start on some of the content for week-0 and I have been playing catch-up ever since. The 1st thing that i did wrong is I rushed through the homeworks without documenting or taking screenshots as proof of work done and realised that my work can not be can verified.I had to go back to my account and destroy it all and start again this, time making sure to take screen shots as explained in Andrew Brown's YouTube video *updating your journal* **insert link to video**
+I finally managed to start on some of the content for week-0 and I have been playing catch-up ever since. The 1st thing that I did wrong is I rushed through the homeworks without documenting or taking screenshots as proof of work done and realised that my work can not be verified.I had to go back to my account and destroy everything I had done and start again this time making sure to take screen shots as explained in Andrew Brown's YouTube video *updating your journal* **insert link to video**
   
   
 
