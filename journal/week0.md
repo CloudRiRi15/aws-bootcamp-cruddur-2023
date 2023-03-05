@@ -1,14 +1,14 @@
 # Introduction
 
-I got enrolled in the 15-week Free AWS Project BootCamp with AWS Community Hero Andrew Brown. The purpose of this BootCamp is to bridge the gap between Certification and actual real world work experience for students who have acquired an associate level certification. I am excited to be part of this great opportunity and plan to be part of each and every part of the process and learn as much as I can and stretch myself to gain actual real work exprience.
+I got enrolled in the 15-week Free AWS Project BootCamp with AWS Community Hero Andrew Brown. The purpose of this BootCamp is to bridge the gap between Certification and actual real world work experience for students who have acquired an associate level certification. I am excited to be part of this great opportunity and plan to be part of each and every part of the process and learn as much as I can and stretch myself to gain actual real work exprience. *A detailed document about the Cloud Project BootCamp can be found [here](https://docs.google.com/document/d/19XMyd5zCk7S9QT2q1_Cg-wvbnBwOge7EgzgvtVCgcz0/edit#)* 
 
-**to insert project Bootcamp goal screenshots**
+![FREE AWS CLOUD PROJECT BOOTCAMP GOAL](assets/BootCamp%20Goal.png)
 
-**to insert project Bootcamp level screenshots**
+![FREE AWS CLOUD PRJECT-LEVEL](assets/Project%20Level-250.png)
 
 # Project Scenario :woman_technologist:
 
-A startup company has decided to build their own micro-blogging platform and has hired you to be its first cloud engineer.The company paid a web-development firm to translate their wireframe designs into a mock web-application for the purpose of demoing to raise capital.After a successful round of funding, you [the cloud engineer] have been tasked with taking the mock web-application and making it production ready at scale.
+A startup company has decided to build their own micro-blogging platform and has hired you to be its first cloud engineer.The company paid a web-development firm to translate their wireframe designs into a mock web-application for the purpose of demoing to raise capital. After a successful round of funding, you [the cloud engineer] have been tasked with taking the mock web-application and making it production ready at scale.
 
 The startup company consulted a fractional CTO to help choose some of the technical requirements to place the company on a good technical roadmap:
 
@@ -45,11 +45,7 @@ Right off the bet, I am faced with some personal challenges which will require m
   
   ### Playing Catch-Up :running_woman::running_woman:
   
-I finally managed to start on some of the content for week-0 and I have been playing catch-up ever since. The 1st thing that I did wrong is I rushed through the homeworks without documenting or taking screenshots as proof of work done and realised that my work can not be verified.I had to go back to my account and destroy everything I had done and start again this time making sure to take screen shots as explained in Andrew Brown's YouTube video *updating your journal* **insert link to video**
-  
-  
-
-
+I finally managed to start on some of the content for week-0 and I have been playing catch-up ever since. The 1st thing that I did wrong is I rushed through the homeworks without documenting or taking screenshots as proof of work done and realised that my work can not be verified. I had to go back to my account and destroy everything I had done and start again this time making sure to take screen shots as explained in Andrew Brown's YouTube video [Updating your journal in Github](https://www.youtube.com/watch?v=mWaSBRJhUFM&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=19)
 
 # Week 0 — Billing and Architecture
 
@@ -64,9 +60,6 @@ We were tasked with drawing a conceptual diagram of the Cruddur App we are build
 ### Generating AWS Credentials
 
 **Install AWS CLI via Gitpod**
-
-
-
 
 
 ### Set an AWS Budget
