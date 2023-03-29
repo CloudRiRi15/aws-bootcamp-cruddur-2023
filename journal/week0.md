@@ -4,8 +4,8 @@
 
  + [Introduction](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#introduction)
  + [Project Scenario](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#project-scenario-woman_technologist)
- + [Technologies and Pre-Requisites]
- + [Set-up Instructions]
+ + [Technologies and Pre-Requisites](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#technologies-and-pre-requisites)
+ + [Set-up Instructions](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#set-up-instructions)
  + [The Challenges and Set-Backs](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#the-challenges-and-set-backs)
  + [Week 0 Homework Required Tasks]
    - [Watch Week 0 - Live Streamed Video] 
@@ -37,7 +37,7 @@ I got enrolled in the 15-week Free AWS Project BootCamp with AWS Community Hero 
 
 ![FREE AWS CLOUD PRJECT-LEVEL](assets/Project%20Level-250.png)
 
-# Project Scenario :woman_technologist:
+## Project Scenario :woman_technologist:
 
 A startup company has decided to build their own micro-blogging platform and has hired you to be its first cloud engineer.The company paid a web-development firm to translate their wireframe designs into a mock web-application for the purpose of demoing to raise capital. After a successful round of funding, you [the cloud engineer] have been tasked with taking the mock web-application and making it production ready at scale.
 
@@ -56,6 +56,14 @@ The startup company consulted a fractional CTO to help choose some of the techni
   -  Takes advantage of modern-applications cloud services.
 
 The startup company has spent the majority of their funding on hiring you for the next 6 months (but mostly spent the money on marketing and buying a really cool domain) and so you also need to ensure you keep the cloud provider costs as low as possible.
+
+## Technologies and Pre-Requisites
+
+
+
+## Set-up Instructions
+
+
 
 
 # The Challenges and Set-Backs
