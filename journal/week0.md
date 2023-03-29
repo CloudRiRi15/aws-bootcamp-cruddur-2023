@@ -1,3 +1,34 @@
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/aws-week-0-1.jpg)
+
+# TABLE OF CONTENTS
+
+ + [Introduction](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#introduction)
+ + [Project Scenario](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#project-scenario-woman_technologist)
+ + [Technologies and Pre-Requisites]
+ + [Set-up Instructions]
+ + [The Challenges and Set-Backs](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#the-challenges-and-set-backs)
+ + [Week 0 Homework Required Tasks]
+   - [Watch Week 0 - Live Streamed Video] 
+   - [Watch Chirag's Week 0 - Spend Considerations]
+   - [Watch Ashish's Week 0 - Security Considerations]
+   - [Recreate Conceptual Diagram in Lucid Charts or on a Napkin](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#conceptual-architectural-diagram-napkin-diagram)
+   - [Recreate Logical Architectual Diagram in Lucid Charts]
+   - [Create an Admin User]
+   - [Use CloudShell]
+   - [Generate AWS Credentials](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#generating-aws-credentials)
+   - [Installed AWS CLI]
+   - [Create a Billing Alarm]
+   - [Create a Budget](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#set-an-aws-budget)
++ [Week 0 Homework Challenges](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#homework-challenges)
+  - Destroy your root account credentials, Set MFA, IAM role
+  - [Review all the questions of each pillars in the Well Architected Tool (No specialized lens)]
+  - [Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue]
+  - [Create an architectural diagram (to the best of your ability) the CI/CD logical pipeline in Lucid Charts]
+  - [Research the technical and service limits of specific services and how they could impact the technical path for technical flexibility]
+  - [Open a support ticket and request a service limit]
+
+
+
 # Introduction
 
 I got enrolled in the 15-week Free AWS Project BootCamp with AWS Community Hero Andrew Brown. The purpose of this BootCamp is to bridge the gap between Certification and actual real world work experience for students who have acquired an associate level certification. I am excited to be part of this great opportunity and plan to be part of each and every part of the process and learn as much as I can and stretch myself to gain actual real work exprience. *A detailed document about the Cloud Project BootCamp can be found [here](https://docs.google.com/document/d/19XMyd5zCk7S9QT2q1_Cg-wvbnBwOge7EgzgvtVCgcz0/edit#)* 
