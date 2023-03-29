@@ -4,13 +4,10 @@
 
  + [Introduction](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#introduction)
  + [Project Scenario](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#project-scenario-woman_technologist)
- + [Technologies and Pre-Requisites](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#technologies-and-pre-requisites)
- + [Set-up Instructions](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#set-up-instructions)
+ + [Pre-Requisites Technologies and Set-up Instructions](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#technologies-and-pre-requisites)
  + [The Challenges and Set-Backs](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#the-challenges-and-set-backs)
- + [Week 0 Homework Required Tasks]
-   - [Watch Week 0 - Live Streamed Video] 
-   - [Watch Chirag's Week 0 - Spend Considerations]
-   - [Watch Ashish's Week 0 - Security Considerations]
+ + [Week 0 Homework Required Tasks](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#required-homeworktasks)
+   - [Watch Week 0 - Live Streamed Video and other required videos for Week 0]
    - [Recreate Conceptual Diagram in Lucid Charts or on a Napkin](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#conceptual-architectural-diagram-napkin-diagram)
    - [Recreate Logical Architectual Diagram in Lucid Charts]
    - [Create an Admin User]
@@ -57,14 +54,22 @@ The startup company consulted a fractional CTO to help choose some of the techni
 
 The startup company has spent the majority of their funding on hiring you for the next 6 months (but mostly spent the money on marketing and buying a really cool domain) and so you also need to ensure you keep the cloud provider costs as low as possible.
 
-## Technologies and Pre-Requisites
+## Pre-Requisites Technologies and Set-up Instructions
 
+Before getting started with this Cloud Project BootCamp, you will need to have the following:
 
-
-## Set-up Instructions
-
-
-
+ +  A [Free-tier AWS](https://www.youtube.com/watch?v=uZT8dA3G-S4&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=7) account with appropriate permissions to create the necessary resources.
+ +  Understand the basic concepts of virtualization and [containers](https://lnkd.in/eY-Ws2zj).
+ +  Basic Knowledge of these programming languages 
+    - [Python 3](https://www.youtube.com/watch?v=eWRfhZUzrAc)
+    - [Javascript ECMAScript 6 (ES6)](https://www.youtube.com/watch?v=PkZNo7MFNFg&t=8s)
+    - YAML and JSON files
+ + [Git](https://www.youtube.com/watch?v=rirBD2CZZXQ&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=2), [Gitpod](https://www.youtube.com/watch?v=yh9kz9Sh1T8&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=4), [Github Codespaces](https://www.youtube.com/watch?v=OwFVrU5B3xs) and Online [Version Control Systems]() VSC Knowledge.
+ + [Honeycomb.io account](https://www.youtube.com/watch?v=7IwtVLfSD0o)
+ + [Rollbar account](https://www.youtube.com/watch?v=Lpm6oAP3Fb0)
+ + [Lucidcharts account](https://www.youtube.com/watch?v=bgFzBYLT3sU)
+ + [Momento account](https://www.gomomento.com/)
+ 
 
 # The Challenges and Set-Backs
 
