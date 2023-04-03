@@ -7,14 +7,14 @@
  + [Pre-Requisites Technologies and Set-up Instructions](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#technologies-and-pre-requisites)
  + [The Challenges and Set-Backs](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#the-challenges-and-set-backs)
  + [Week 0 Homework Required Tasks](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#required-homeworktasks)
-   - [Watch Week 0 - Live Streamed Video and other required videos for Week 0]
+   - [Watch Week 0 - Live Streamed Video and other required videos for Week 0](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#watched-the-live-stream-video-and-all-required-videos-for-week-0-as-outlined-in-the-student-portal-videos-can-be-found-on-the-bootcamp-official-playlist)
    - [Recreate Conceptual Diagram in Lucid Charts or on a Napkin](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#conceptual-architectural-diagram-napkin-diagram)
-   - [Recreate Logical Architectual Diagram in Lucid Charts]
-   - [Create an Admin User]
-   - [Use CloudShell]
+   - [Recreate Logical Architectual Diagram in Lucid Charts]()
+   - [Create an Admin User]()
+   - [Use CloudShell](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#using-cloudshell)
    - [Generate AWS Credentials](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#generating-aws-credentials)
-   - [Installed AWS CLI]
-   - [Create a Billing Alarm]
+   - [Install AWS CLI]()
+   - [Create a Billing Alarm](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#set-a-billing-alarm)
    - [Create a Budget](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#set-an-aws-budget)
 + [Week 0 Homework Challenges](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#homework-challenges)
   - Destroy your root account credentials, Set MFA, IAM role
