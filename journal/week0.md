@@ -54,6 +54,8 @@ The startup company consulted a fractional CTO to help choose some of the techni
 
 The startup company has spent the majority of their funding on hiring you for the next 6 months (but mostly spent the money on marketing and buying a really cool domain) and so you also need to ensure you keep the cloud provider costs as low as possible.
 
+[Margaret Valtierra](https://www.linkedin.com/in/margaretvaltierra/), who is an AWS Community Hero, used a beautiful concept (user personnas) to help us visualise the project scenario. I still see Tony talking to me in the conference room.😆 
+
 ## Pre-Requisites Technologies and Set-up Instructions
 
 Before getting started with this Cloud Project BootCamp, you will need to have the following:
@@ -70,6 +72,7 @@ Before getting started with this Cloud Project BootCamp, you will need to have t
  + [Lucidcharts account](https://www.youtube.com/watch?v=bgFzBYLT3sU)
  + [Momento account](https://www.gomomento.com/)
  
+ **All setup videos for the pre-requisite technologies are courtsey of [@Giftedlane](https://www.youtube.com/@GiftedLane)**
 
 # The Challenges and Set-Backs
 
@@ -83,9 +86,12 @@ Right off the bet, I am faced with some personal challenges which will require m
 
 ### GitHub *What is this and how do I use it* :thinking:
 
- Yes I said GitHub. To be precise writing a markdown files and basic technical writing skills. I am finding that I am struggling with what to include or not include in my journal. How detailed should the information be, just how much to put and what to leave out. After careful study *over a week long* I think I have sort of figured it out. Here is a list of some of the resources I used to help me with GitHub and Technical Documentation, can be found here **to insert a link of all the resources used**.I thought to myself since the goal of this BootCamp is to help an associate level certification holder to build a cloud project with enough complexity to merit worthiness on their resume and combine multiple cloud services to emulate a real-world production workload, I am going to make sure that I document my project journey with as much details as possible while making it as easy to read and understand as possible, using simple language to explain complex technical processess.
+ Yes I said GitHub. To be precise writing a markdown files and basic technical writing skills. I am finding that I am struggling with what to include or not include in my journal. How detailed should the information be, just how much to put and what to leave out. After careful study *over a week long* I think I have sort of figured it out. I thought to myself since the goal of this BootCamp is to help an associate level certification holder to build a cloud project with enough complexity to merit worthiness on their resume and combine multiple cloud services to emulate a real-world production workload, I am going to make sure that I document my project journey with as much detail as possible while making it as easy to read and understand,3 using simple language to explain complex technical processess.Here is a list of some of the resources I used to help me with GitHub and Technical Documentation.
+ + [Git and Github CrashCourse](https://www.youtube.com/watch?v=RGOj5yH7evk)
+ + [Github Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+ + [Technical Writing](https://developers.google.com/tech-writing)
 
-  ## Challenge No. 3
+## Challenge No. 3
   
   ### Playing Catch-Up :running_woman::running_woman:
   
@@ -95,13 +101,17 @@ I finally managed to start on some of the content for week-0 and I have been pla
 
 ## Required Homework/Tasks
 
+### Watched the live stream video and all required videos for week 0 as outlined in the [student portal](https://student.cloudprojectbootcamp.com/). Videos can be found on the [BootCamp official playlist](https://www.youtube.com/watch?v=8b8SvQHc4Pk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv)
+
 ### Conceptual Architectural Diagram (Napkin Diagram)
 
-We were tasked with drawing a conceptual diagram of the Cruddur App we are building. The purpose of this is to sort of put things into perspective, this is like a foundation being laid.
+We were tasked with drawing a conceptual diagram of the Cruddur App we are building. The purpose of this is to sort of put things into perspective, this is like a foundation being laid. As it the time I watched this I didnt haveany access to a real actual napkin so I used my white. I plan to still do it in a napkin though for the kicks of it.
 
 **to insert napkin image as proof of work done**
 
 ### Generating AWS Credentials
+
+I set up my AWS Credentials and got them working. 
 
 **Install AWS CLI via Gitpod**
 
@@ -111,7 +121,8 @@ From the root account, grant the IAM user billing access and permissions. **NB**
 
 **to insert budget image as proof of work done**
 
-Once you grant your IAM user access to billing permissions, log in to your IAM console to set a budget. I created 2 budgets for this BootCamp, since the goal was to make use of the free-tier account I first created a Zero Spend Budget. This was very simple and starightforward to do. 
+Once you grant your IAM user access to billing permissions, log in to your IAM console to set a budget. I created Zero Spend Budget for this BootCamp, since the goal was to make use of the free-tier account. This was very simple and starightforward to implement.
+
 From the AWS billing Console >Select Budgets > Create Budget > Choose Budget Type
 Budget Setup and Templates (*new*) will show as per image below.
 Under Template, I selected the Zero Spend Budget and **Click Create Budget**
@@ -122,17 +133,32 @@ Under Template, I selected the Zero Spend Budget and **Click Create Budget**
 
 ### Set a Billing Alarm
 
-For the task of creating a billing I chose to use the AWS CLI.Inorder for you to create a billing alarm you will need to firstly  I followed the following steps to achieve this
+For the task of creating a billing alarm, I chose to use the AWS CLI. Inorder for you to create a billing alarm you follow the following steps:
 
-Step 1
+Step 1: Create an SNS Topic
 
-Create an SNS Topic
 
 
 
 **to insert billing image as proof of work done**
 
 ### Using CloudShell
+
+###Applying AWS credits to AWS Account. 
+
+Using the step by step guide from Chirag's [Video](https://www.youtube.com/watch?v=OVw3RrlP-sI&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=13) on Pricing Basics and Free Tier I was able to successfully apply AWS credits to my AWS account. 
+
+1. From the Billing Console navigate to the credits panel and click on `Redeem credits`.
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/AWS%20Credits1.png)
+
+
+2. This will take you to the `Redeem Credits` page and in the `Promotion Code` box type in your credits code and Also fill in the security check code in the `Security code` box. At the bottom of that page click `Redeem credit`
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/AWS%20credits2.png)
+
+
+3. A green banner will appear at the top of the screen to verify that you have redeemed your credits successfully. The amount of your redeemed credits will show in your summary right below.
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/AWS%20credits3.png)
+
 
 ## HomeWork Challenges
 
