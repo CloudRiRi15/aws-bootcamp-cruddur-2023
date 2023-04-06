@@ -10,10 +10,10 @@
    - [Watch Week 0 - Live Streamed Video and other required videos for Week 0](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#watched-the-live-stream-video-and-all-required-videos-for-week-0-as-outlined-in-the-student-portal-videos-can-be-found-on-the-bootcamp-official-playlist)
    - [Recreate Conceptual Diagram in Lucid Charts or on a Napkin](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#conceptual-architectural-diagram-napkin-diagram)
    - [Recreate Logical Architectual Diagram in Lucid Charts]()
-   - [Create an Admin User]()
+   - [Create an Admin User](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#create-and-iam-user)
    - [Use CloudShell](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#using-cloudshell)
    - [Generate AWS Credentials](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#generating-aws-credentials)
-   - [Install AWS CLI]()
+   - [Install AWS CLI](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#install-aws-cli-via-gitpod)
    - [Create a Billing Alarm](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/week0.md#set-a-billing-alarm)
    - [Create a Budget](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#set-an-aws-budget)
 + [Week 0 Homework Challenges](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/edit/main/journal/week0.md#homework-challenges)
@@ -109,7 +109,7 @@ We were tasked with drawing a conceptual diagram of the Cruddur App we are build
 
 **to insert napkin image as proof of work done**
 
-### Generating AWS Credentials
+### Create an IAM User
 
 From the root account navigate to IAM console. You will notice that there will be a few recommendations from the `IAM dashboard` that will be in red. You will need to do those things as best practice. See image below showing some of the recommendations in my root account.
 
@@ -141,25 +141,51 @@ Once your group is created click the checkbox to add your user to the newly crea
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/create%20user%208.png)
 
-Congratulations you have created an `IAM user` with Admin permissions.
+Congratulations you have created an `IAM user` with Admin permissions. Notice that your `IAM user` does not have `Access keys` enabled.
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CREATED%20IAM%20USER%20PROOF.png)
 
+### Generating AWS Credentials
+
+The next step is to create AWS Credentials for your newly created `IAM user`. Firstly log out of the root account and log in to your `IAM user` account. Using the `console sign-in link`. Follow the prompts to create a new password for your `IAM user`
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201a.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201b.png)
+
+Once you are logged into the `IAM user` account navigate to the `IAM console` and select `User` from the panel. Click the checkbox to select the `IAM user` you just created.
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201c.png)
+
+We have to navigate our way to the security credentials tab inorder to get access to create access keys for this user. Select the `Security Credentials` tab. Scroll down to `Access Keys`. Notice that the are no access keys. Click `Create access keys`
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201d.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201.png)
+
+This will take you to the `Access key best practices & alternatives` page. From the options below select `Command Line Interface (CLI)`.
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%202.png)
+
+Scroll down and check the box `I understand the above reccomendation and want to proceed to create access key`. Click `Next`.
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%203.png)
+
+Under no circumstance do you share your `Access key` with anyone asit is a huge security risk. You can download your `.csv` file to save your access key. Click `Done`.
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%204.png)
+
+Notice that your `Access key` status is `Active`. Congratulations you have successfully created access keys for the IAM user. 
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Access%20keys%20step%205%20created.png)
+
+### Install AWS CLI via Gitpod.
+
+From your Github Bootcamp repository, launch Gitpod by clicking the `Gitpod` button.
+![]()
+
+Once your Gitpod enviroment has been provisioned navigate to the `gitpod.yml` file.
+![]()
 
 
 
-
-
-
-
-
-
-
-
-
-I set up my AWS Credentials and got them working. 
-
-**Install AWS CLI via Gitpod**
 
 
 ### Set an AWS Budget
