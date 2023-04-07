@@ -156,6 +156,7 @@ The next step is to create AWS Credentials for your newly created `IAM user`. Fi
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201b.png)
 
 Once you are logged into the `IAM user` account navigate to the `IAM console` and select `User` from the panel. Click the checkbox to select the `IAM user` you just created.
+
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/access%20keys%20step%201c.png)
 
 We have to navigate our way to the security credentials tab inorder to get access to create access keys for this user. Select the `Security Credentials` tab. Scroll down to `Access Keys`. Notice that the are no access keys. Click `Create access keys`
@@ -188,9 +189,7 @@ From your Github Bootcamp repository, launch Gitpod by clicking the `Gitpod` but
 
 Once your enviroment has been provisioned in `Gitpod`, proceed to the terminal and run the code below to install `AWS CLI` into our Gitpod enviroment.
 
-``` curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-      unzip awscliv2.zip
-      sudo ./aws/install```
+![]()
       
 In my case I ran the code and got back an error as shown in the image below.
 
@@ -199,9 +198,9 @@ In my case I ran the code and got back an error as shown in the image below.
 After running into the `command not found error`, I had to debug and find reasons why it was not working and if there are alternative ways to complete the installation. I looked through the [Gitpod Documents](https://www.gitpod.io/guides/integrate-aws-cli-ecr) and found an alternative code to install the CLI onto `Gitpod`. I found the code below:
 
 ```curl -fSsl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip -qq awscliv2.zip
-sudo ./aws/install --update
-rm awscliv2.zip```
+   unzip -qq awscliv2.zip
+  sudo ./aws/install --update
+  rm awscliv2.zip```
 
 
 ![Code to Install AWS CLI on Gitpod](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%204%20on%20Gitpod%20alternative%20success.png)
