@@ -103,11 +103,13 @@ I finally managed to start on some of the content for week-0 and I have been pla
 
 ### Watched the live stream video and all required videos for week 0 as outlined in the [student portal](https://student.cloudprojectbootcamp.com/). Videos can be found on the [BootCamp official playlist](https://www.youtube.com/watch?v=8b8SvQHc4Pk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv)
 
+
 ### Conceptual Architectural Diagram (Napkin Diagram)
 
 We were tasked with drawing a conceptual diagram of the Cruddur App we are building. The purpose of this is to sort of put things into perspective, this is like a foundation being laid. As it the time I watched this I didnt haveany access to a real actual napkin so I used my white. I plan to still do it in a napkin though for the kicks of it.
 
 **to insert napkin image as proof of work done**
+
 
 ### Create an IAM User
 
@@ -145,6 +147,7 @@ Congratulations you have created an `IAM user` with Admin permissions. Notice th
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CREATED%20IAM%20USER%20PROOF.png)
 
+
 ### Generating AWS Credentials
 
 The next step is to create AWS Credentials for your newly created `IAM user`. Firstly log out of the root account and log in to your `IAM user` account. Using the `console sign-in link`. Follow the prompts to create a new password for your `IAM user`
@@ -175,6 +178,7 @@ Under no circumstance do you share your `Access key` with anyone asit is a huge 
 Notice that your `Access key` status is `Active`. Congratulations you have successfully created access keys for the IAM user. 
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Access%20keys%20step%205%20created.png)
+
 
 ### Install AWS CLI via Gitpod.
 
@@ -210,23 +214,96 @@ Out of curiosity I asked `ChatGPT` what exactly this command does as a way to ge
 
 ![ChatGPT breakdown of the Command](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%20chatgpt.png)
 
-Now that the `awscliv2.zip` file has been downloaded its ready for installation onto your `Gitpod` enviroment.
+Now that the `awscliv2.zip` file has been downloaded its ready for installation onto your `Gitpod` enviroment. Run the `ls -la` command to list all the downloaded files as a confirmation.
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%205%20success%20main.png)
+
+Your file is ready for installation. To install `awscliv2.zip` onto your `Gitpod` enviroment you will run the remaining lines of our command. First we unzip the file by  running this line of code `unzip awscliv2.zip`. Then run the `sudo ./aws/install` code to install AWS CLI. Once successfull, you get a response that says `You can now run: usr/local/bin/aws --version`
+
+![Terminal in dark Mode](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%208%20drk%20mode.png)
 
 
+#### Set Enviroment Variables
+
+Now that we have successfully installed our `AWS CLI` in `Gitpod` we have to set enviroment variables for our AWS account using the `Access keys` we generated earlier. Inorder to avoid risk of exposing senstive information or my `Access Keys`, for this part I will refer you to a [step by step video guide](https://www.youtube.com/watch?v=OdUnNuKylHg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=17) given by Andrew Brown during the BootCamp on how to set up your enviroment variables. 
+
+To set the Enviroment Variables we will use the code below:
+
+```export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export AWS_DEFAULT_REGION=us-east-1```
+
+We will set `Gitpod` to remember these credentials whenever we relaunch our workspaces using the code below:
+
+```gp env AWS_ACCESS_KEY_ID=""
+gp env AWS_SECRET_ACCESS_KEY=""
+gp env AWS_DEFAULT_REGION=us-east-1```
 
 
+I was able to set my enviroment variables into my Gitpod and used the `aws sts get-caller-identity` command to verify that it was successfully set.
+
+![Successfully managed to set up AWS CLI in Gitpod and set Enviroment Variables and confirm that its set and working.](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%209.png)
 
 
+### Create a Billing Alarm
 
+We need to turn on Billing Alerts for us to receive alerts
 
+ +From  your Root Account go to your Billing Console.
+ +Under Billing Preferences Choose Receive Billing Alerts.
+ +Save Preference
+ ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Billing%20Alerts%20Prefences%20enabled.png)
+ 
+ 
+ ##### Create an SNS Topic
+ 
+  +Inorder for you to create a billing alarm we need to create an SNS topic first.
+  +The SNS topic is what will send us an alert when we get overbilled
+  +More information on creating an SNS topic via CLI can be found [here](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html).
 
+We'll create a SNS Topic by typing in the command below in our terminal this will create an SNS Topic return a `TopicARN`
 
+```aws sns create-topic --name billing-alarm```
 
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%201%20Create%20an%20sns%20Topic.png)
 
+Next you will create a subscription using the `TopicArn` that was returned from the sns topic you created by running this command:
 
+```aws sns subscribe \
+    --topic-arn TopicARN \
+    --protocol email \
+    --notification-endpoint your@email.com```
+    
+Remember to update your email as the `notification endpoint`. Notice that the `SubscriptionArn:` is in  `pending confirmation` state,  this is because when an sns topic is created and there a subscription for that topic you will have to confirm it first.
+   
+   ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203a%20From%20CLI%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
+   
+ Head over to your AWS Console and from the SNS service console you will notice that your subscription was created but is pending conformation.
+ 
+ ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203b%20From%20AWS%20Console%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
+ 
+    
+ To confirm the subscription you will go to the inbox of the email you provided as the `notification-endpoint` and click `Confirm Subcription`.
+ 
+ ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204a%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
+ 
+ Once you have confirmed your subscription you will get a message banner confirming that your subscription was successfull and you can procceed to verify this in your AWS console.
+ 
+ ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
+ ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204b%20Fro%20the%20console%20notice%20that%20the%20subscription%20is%20now%20confirmed.png)
+ 
+ Now that we have an SNS topic that we are subscribed to, we will proceed to create a Alarm.
+ 
 
+ +We need to update the configuration json script with the TopicARN we generated earlier
+ +We are just a json file because --metrics is is required for expressions and so its easier to us a JSON file.
+ 
+ ```aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json```
+ 
+  
 
 ### Set an AWS Budget
+
 From the root account, grant the IAM user billing access and permissions. **NB** if you do not grant the IAM user billing access, the IAM user will not be able to access the billing console. 
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Create%20Budget%201.png)
@@ -245,32 +322,16 @@ This will to take you to the `Choose Budget Type` page. In the `Budget Setup` pa
 From the `Templates- new` options, I selected the `Zero Spend Budget` and Click `Create Budget`. My Zero Spend budget was created from the template.
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Create%20Budget%205.png)
 
-### Set a Billing Alarm
-
-For the task of creating a billing alarm, I chose to use the AWS CLI. Inorder for you to create a billing alarm you follow the following steps:
-
-Step 1: Create an SNS Topic
-
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%201%20Create%20an%20sns%20Topic.png)
-
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%202%20Run%20Command.png)
-
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203b%20From%20AWS%20Console%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
-
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203b%20From%20AWS%20Console%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
-
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
-
-
-
-
-
-
-**to insert billing image as proof of work done**
 
 ### Using CloudShell
 
-###Applying AWS credits to AWS Account. 
+I confirmed that AWS Cloudshell was working in my AWS enviroment. To launch `AWS CloudShell`  click the `>_` button at the top of your AWS account usually next to the notification bell icon. Run the `aws sts get-caller-identity` command to verify that it is working and your credentials are set.
+
+
+![Confirmation that AWS CloudShell is working](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/aws%20cloudshell%20%20.png)
+
+
+### Applying AWS credits to AWS Account. 
 
 Using the step by step guide from Chirag's [Video](https://www.youtube.com/watch?v=OVw3RrlP-sI&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=13) on Pricing Basics and Free Tier I was able to successfully apply AWS credits to my AWS account. 
 
