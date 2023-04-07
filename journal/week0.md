@@ -179,10 +179,48 @@ Notice that your `Access key` status is `Active`. Congratulations you have succe
 ### Install AWS CLI via Gitpod.
 
 From your Github Bootcamp repository, launch Gitpod by clicking the `Gitpod` button.
-![]()
 
-Once your Gitpod enviroment has been provisioned navigate to the `gitpod.yml` file.
-![]()
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%201.png)
+
+Once your enviroment has been provisioned in `Gitpod`, proceed to the terminal and run the code below to install `AWS CLI` into our Gitpod enviroment.
+
+``` curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install```
+      
+In my case I ran the code and got back an error as shown in the image below.
+
+![Error when trying to install AWS CLI](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%203%20%20Gitpod%20Command%20not%20found.png)
+
+After running into the `command not found error`, I had to debug and find reasons why it was not working and if there are alternative ways to complete the installation. I looked through the [Gitpod Documents](https://www.gitpod.io/guides/integrate-aws-cli-ecr) and found an alternative code to install the CLI onto `Gitpod`. I found the code below:
+
+``` curl -fSsl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip -qq awscliv2.zip
+sudo ./aws/install --update
+rm awscliv2.zip ```
+
+![Code to Install AWS CLI on Gitpod](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%204%20on%20Gitpod%20alternative%20success.png)
+
+
+I ran the first line of the code using the `curl -fSsl` command and was able to successfully download the `awscliv2.zip` file for installation onto my `Gitpod` enviroment. 
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%205%20success%20main.png)
+
+Out of curiosity I asked `ChatGPT` what exactly this command does as a way to get an understanding of why the first command had failed and `ChatGPT` gave me the response below:
+
+![ChatGPT breakdown of the Command](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%20chatgpt.png)
+
+Now that the `awscliv2.zip` file has been downloaded its ready for installation onto your `Gitpod` enviroment.
+
+
+
+
+
+
+
+
+
+
 
 
 
