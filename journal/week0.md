@@ -198,10 +198,11 @@ In my case I ran the code and got back an error as shown in the image below.
 
 After running into the `command not found error`, I had to debug and find reasons why it was not working and if there are alternative ways to complete the installation. I looked through the [Gitpod Documents](https://www.gitpod.io/guides/integrate-aws-cli-ecr) and found an alternative code to install the CLI onto `Gitpod`. I found the code below:
 
-``` curl -fSsl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```curl -fSsl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip -qq awscliv2.zip
 sudo ./aws/install --update
-rm awscliv2.zip ```
+rm awscliv2.zip```
+
 
 ![Code to Install AWS CLI on Gitpod](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%204%20on%20Gitpod%20alternative%20success.png)
 
