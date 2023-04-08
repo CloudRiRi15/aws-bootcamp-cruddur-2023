@@ -189,19 +189,17 @@ From your Github Bootcamp repository, launch Gitpod by clicking the `Gitpod` but
 
 Once your enviroment has been provisioned in `Gitpod`, proceed to the terminal and run the code below to install `AWS CLI` into our Gitpod enviroment.
 
-![]()
+    ```sh
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    ```
       
 In my case I ran the code and got back an error as shown in the image below.
 
 ![Error when trying to install AWS CLI](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%203%20%20Gitpod%20Command%20not%20found.png)
 
-After running into the `command not found error`, I had to debug and find reasons why it was not working and if there are alternative ways to complete the installation. I looked through the [Gitpod Documents](https://www.gitpod.io/guides/integrate-aws-cli-ecr) and found an alternative code to install the CLI onto `Gitpod`. I found the code below:
-
-```curl -fSsl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-   unzip -qq awscliv2.zip
-  sudo ./aws/install --update
-  rm awscliv2.zip```
-
+After running into the `command not found error`, I had to debug and find reasons why it was not working and if there are alternative ways to complete the installation. I looked through the [Gitpod Documents](https://www.gitpod.io/guides/integrate-aws-cli-ecr) and found an alternative code to install the CLI onto `Gitpod`. 
 
 ![Code to Install AWS CLI on Gitpod](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/CLI%20install%204%20on%20Gitpod%20alternative%20success.png)
 
@@ -228,17 +226,17 @@ Your file is ready for installation. To install `awscliv2.zip` onto your `Gitpod
 Now that we have successfully installed our `AWS CLI` in `Gitpod` we have to set enviroment variables for our AWS account using the `Access keys` we generated earlier. Inorder to avoid risk of exposing senstive information or my `Access Keys`, for this part I will refer you to a [step by step video guide](https://www.youtube.com/watch?v=OdUnNuKylHg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=17) given by Andrew Brown during the BootCamp on how to set up your enviroment variables. 
 
 To set the Enviroment Variables we will use the code below:
-
-```export AWS_ACCESS_KEY_ID=""
+```
+export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
-export AWS_DEFAULT_REGION=us-east-1```
-
+export AWS_DEFAULT_REGION=us-east-1
+```
 We will set `Gitpod` to remember these credentials whenever we relaunch our workspaces using the code below:
-
-```gp env AWS_ACCESS_KEY_ID=""
+```
+gp env AWS_ACCESS_KEY_ID=""
 gp env AWS_SECRET_ACCESS_KEY=""
-gp env AWS_DEFAULT_REGION=us-east-1```
-
+gp env AWS_DEFAULT_REGION=us-east-1
+```
 
 I was able to set my enviroment variables into my Gitpod and used the `aws sts get-caller-identity` command to verify that it was successfully set.
 
@@ -249,58 +247,113 @@ I was able to set my enviroment variables into my Gitpod and used the `aws sts g
 
 We need to turn on Billing Alerts for us to receive alerts
 
- +From  your Root Account go to your Billing Console.
- +Under Billing Preferences Choose Receive Billing Alerts.
- +Save Preference
- ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Billing%20Alerts%20Prefences%20enabled.png)
+ + From  your Root Account go to your Billing Console.
+ + Under Billing Preferences Choose Receive Billing Alerts.
+ + Save Preference
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Billing%20Alerts%20Prefences%20enabled.png)
  
  
- ##### Create an SNS Topic
- 
-  +Inorder for you to create a billing alarm we need to create an SNS topic first.
-  +The SNS topic is what will send us an alert when we get overbilled
-  +More information on creating an SNS topic via CLI can be found [here](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html).
+##### Create an SNS Topic
+ + Inorder for you to create a billing alarm we need to create an SNS topic first.
+ + The SNS topic is what will send us an alert when we get overbilled
+ + More information on creating an SNS topic via CLI can be found [here](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html).
 
 We'll create a SNS Topic by typing in the command below in our terminal this will create an SNS Topic return a `TopicARN`
-
-```aws sns create-topic --name billing-alarm```
-
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%201%20Create%20an%20sns%20Topic.png)
+```sh
+aws sns create-topic --name billing-alarm
+```
 
 Next you will create a subscription using the `TopicArn` that was returned from the sns topic you created by running this command:
-
-```aws sns subscribe \
+```sh
+aws sns subscribe \
     --topic-arn TopicARN \
     --protocol email \
-    --notification-endpoint your@email.com```
-    
+    --notification-endpoint your@email.com
+```
+     
 Remember to update your email as the `notification endpoint`. Notice that the `SubscriptionArn:` is in  `pending confirmation` state,  this is because when an sns topic is created and there a subscription for that topic you will have to confirm it first.
    
-   ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203a%20From%20CLI%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203a%20From%20CLI%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
    
- Head over to your AWS Console and from the SNS service console you will notice that your subscription was created but is pending conformation.
+Head over to your AWS Console and from the SNS service console you will notice that your subscription was created but is pending conformation.
  
- ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203b%20From%20AWS%20Console%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%203b%20From%20AWS%20Console%20notice%20the%20created%20Topic%20is%20pending%20Confirmation.png)
  
     
- To confirm the subscription you will go to the inbox of the email you provided as the `notification-endpoint` and click `Confirm Subcription`.
+To confirm the subscription you will go to the inbox of the email you provided as the `notification-endpoint` and click `Confirm Subcription`.
  
- ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204a%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204a%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
  
- Once you have confirmed your subscription you will get a message banner confirming that your subscription was successfull and you can procceed to verify this in your AWS console.
+Once you have confirmed your subscription you will get a message banner confirming that your subscription was successfull and you can procceed to verify this in your AWS console.
  
- ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
- ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204b%20Fro%20the%20console%20notice%20that%20the%20subscription%20is%20now%20confirmed.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204%20Confirm%20Subscription%20Via%20link%20sent%20to%20your%20email.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%204b%20Fro%20the%20console%20notice%20that%20the%20subscription%20is%20now%20confirmed.png)
  
- Now that we have an SNS topic that we are subscribed to, we will proceed to create a Alarm.
+Now that we have an SNS topic that we are subscribed to, we will proceed to create a Alarm.
  
+ + Create an `alarm-config.json` file from our Gitpod using this JSON file below:
 
- +We need to update the configuration json script with the TopicARN we generated earlier
- +We are just a json file because --metrics is is required for expressions and so its easier to us a JSON file.
+ ```json
+{
+    "AlarmName": "DailyEstimatedCharges",
+    "AlarmDescription": "This alarm would be triggered if the daily estimated charges exceeds 1$",
+    "ActionsEnabled": true,
+    "AlarmActions": [
+        "arn:aws:sns:us-east-1:937357744488:billing-alarm"  
+    ],
+    "EvaluationPeriods": 1,
+    "DatapointsToAlarm": 1,
+    "Threshold": 1,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "TreatMissingData": "breaching",
+    "Metrics": [{
+        "Id": "m1",
+        "MetricStat": {
+            "Metric": {
+                "Namespace": "AWS/Billing",
+                "MetricName": "EstimatedCharges",
+                "Dimensions": [{
+                    "Name": "Currency",
+                    "Value": "USD"
+                }]
+            },
+            "Period": 86400,
+            "Stat": "Maximum"
+        },
+        "ReturnData": false
+    },
+    {
+        "Id": "e1",
+        "Expression": "IF(RATE(m1)>0,RATE(m1)*86400,0)",
+        "Label": "DailyEstimatedCharges",
+        "ReturnData": true
+    }]
+  }
+  ```
+ + Update the configuration json script with the TopicARN we generated earlier.
  
- ```aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json```
+*From your console notice that there are currently no alarms set* 
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%205a%20AWS%20Console%20to%20confirm%20no%20billing%20alarm%20set.png)
+
+ + Run the `put-metric-alarm` script below to create an alarm as configured in the .json file.
  
-  
+```sh
+aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
+```
+
+*Image showing alarm config file and running of the put metric script to create alarm*
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%205b%20Add%20json%20file%20and%20run%20command.png)
+
+
+*Confirm that the Billim Alarm has been set from your AWS CloudWatch Console*.
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%205c%20AWS%20Console%20to%20confirm%20billing%20alarm%20is%20set.png)
+
+
+*Congratulations you have successfully set a Billing Alarm via AWS CLI. Commit your code to your Github repo and make sure it was committed successfully.*
+
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Step%205d%20AWS%20Console%20to%20confirm%20commit%20of%20code%20to%20github.png)
+
 
 ### Set an AWS Budget
 
