@@ -17,7 +17,10 @@ export default function SignupPage() {
 
   const onsubmit = async (event) => {
     event.preventDefault();
-    setCognitoErrors('')
+    setErrors('')
+    console.log('username',username)
+    console.log('email',email)
+    console.log('name',name)
     try {
       const { user } = await Auth.signUp({
         username: email,
@@ -35,7 +38,7 @@ export default function SignupPage() {
       window.location.href = `/confirm?email=${email}`
     } catch (error) {
         console.log(error);
-        setCognitoErrors(error.message)
+        setErrors(error.message)
     }
     return false
   }
