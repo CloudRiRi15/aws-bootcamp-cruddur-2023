@@ -15,4 +15,6 @@ blinker
 rollbar
 
 Flask-AWSCognito
+
+social-auth-core
     
