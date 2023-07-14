@@ -4,6 +4,8 @@ from flask_cors import CORS, cross_origin
 import os
 import sys
 
+from flask_awscognito import AWSCognitoAuthentication
+
 from services.home_activities import *
 from services.notifications_activities import *
 from services.user_activities import *
@@ -14,6 +16,8 @@ from services.message_groups import *
 from services.messages import *
 from services.create_message import *
 from services.show_activity import *
+
+from lib.cognito_token_verification import CognitoTokenVerification
 
 # HONEYCOMB ---------
 from opentelemetry import trace
@@ -67,6 +71,11 @@ trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 
 app = Flask(__name__)
+app.config['AWS_COGNITO_USER_POOL_ID'] = os.getenv("AWS_COGNTO_USER_POOL_ID")
+app.config['AWS_COGNITO_USER_POOL_CLIENT_ID'] = os.getenv("AWS_COGNTO_USER_POOL_CLIENT_ID")
+
+aws_auth = AWSCognitoAuthentication(app)
+
 
 # X-Ray -------------
 XRayMiddleware(app, xray_recorder)
@@ -154,12 +163,13 @@ def data_create_message():
   return
 
 @app.route("/api/activities/home", methods=['GET'])
+@xray_recorder.capture('activities_home')
+@aws_auth.authentication_required
 def data_home():
-  app.logger.debug("AUTH HEADER")
-  print(
-    request.headers.get('Authorization') 
-  )
   data = HomeActivities.run()
+  claims = aws_auth.claims
+  app.logger.debug('claims')
+  app.logger.debug(claims)
   return data, 200
 
 @app.route("/api/activities/notifications", methods=['GET'])
