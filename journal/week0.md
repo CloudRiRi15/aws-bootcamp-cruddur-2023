@@ -1,4 +1,4 @@
-# BILLING AND ARCHITECTURE
+# WEEK 0 - BILLING AND ARCHITECTURE
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/aws-week-0-1.jpg)
 
