@@ -17,4 +17,7 @@ rollbar
 Flask-AWSCognito
 
 social-auth-core
+
+psycopg[binary]
+psycopg[pool]
     
