@@ -13,7 +13,7 @@ class HomeActivities:
     #  now = datetime.now(timezone.utc).astimezone()
     #  span.set_attribute("app.now", now.isoformat())
 
-    sql = query_wrap_array("""
+      sql = query_wrap_array("""
       SELECT
         activities.uuid,
         users.display_name,
