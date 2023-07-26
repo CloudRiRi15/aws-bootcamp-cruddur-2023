@@ -66,4 +66,4 @@ class CreateActivity:
       "{expires_at"      
     )
     """    
-    query_array_json(sql)
+    query_commit(sql)
