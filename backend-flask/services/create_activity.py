@@ -53,17 +53,25 @@ class CreateActivity:
         'expires_at': (now + ttl_offset).isoformat()
       }
     return model
-  def create_activity(user_uuid, message, expires_at):
+  def create_activity(handle, message, expires_at):
     sql = """
     INSERT INTO (
       user_uuid,
       message,
       expires_at
     )
-    VALUES (
-      "{user_uuid}",
-      "{message}",
-      "{expires_at"      
-    )
+    VALUES ((SELECT uuid 
+    FROM public.users 
+    WHERE users.handle = %(handle)s 
+    LIMIT 1
+    ),
+    %(message)s,
+    %(expires_at)s,
+  ) RETURNING uuid;
     """    
-    query_commit(sql)
+    uuid = db.query_commit_returning_id(sql,
+      handle,
+      message,
+      expires_at
+      )
+  #def query_object_activity():
