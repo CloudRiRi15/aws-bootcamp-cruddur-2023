@@ -9,12 +9,12 @@ class Db:
     connection_url = os.getenv("CONNECTION_URL")
     self.pool = ConnectionPool(connection_url)
   # we want to commit data such as an insert
-  def query_commit_returning_id(self,sql,*args):
+  def query_commit_returning_id(self,sql,*kwargs):
     print("SQL STATEMENT-[commit with returning]-----") 
     try: 
       conn = self.pool.connection() 
       cur = conn.cursor()
-      cur.execute(sql,*args)
+      cur.execute(sql,kwargs)
       returning_id = cur.fetchone()[0]
       conn.commit()
       return returning_id
