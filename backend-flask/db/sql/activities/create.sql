@@ -6,7 +6,7 @@ INSERT INTO public.activities (
 VALUES (
   (SELECT uuid 
     FROM public.users 
-    WHERE users.handle = %(handle)s 
+    WHERE users.handle = %(handle)s
     LIMIT 1
   ),
   %(message)s,
