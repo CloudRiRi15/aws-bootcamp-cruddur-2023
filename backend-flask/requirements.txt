@@ -21,3 +21,4 @@ social-auth-core
 psycopg[binary]
 psycopg[pool]
     
+boto3
