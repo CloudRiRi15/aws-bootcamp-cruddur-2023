@@ -18,11 +18,11 @@ def list_message_groups(client,my_user_uuid):
     table_name = 'cruddur-messages'
     query_params = {
       'TableName': table_name,
-      'KeyConditionExpression': 'pk = :pkey',
+      'KeyConditionExpression': 'pk = :pk',
       'ScanIndexForward': False,
       'Limit': 20,
       'ExpressionAttributeValues': {
-        ':pkey': {'S': f"GRP#{my_user_uuid}"}
+        ':pk': {'S': f"GRP#{my_user_uuid}"}
       }
     }
     print('query-params')
