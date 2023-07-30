@@ -15,6 +15,7 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
+
 from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
 
 # HoneyComb ---------
@@ -129,7 +130,6 @@ def rollbar_test():
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
   access_token = extract_access_token(request.headers)
-
   try:
     claims = cognito_jwt_token.verify(access_token)
     # authenticated request
@@ -152,8 +152,8 @@ def data_messages(message_group_uuid):
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # authenticated request
-    app.logger.debug("authenticated")
+    # authenicatied request
+    app.logger.debug("authenicated")
     app.logger.debug(claims)
     cognito_user_id = claims['sub']
     model = Messages.run(
@@ -165,7 +165,7 @@ def data_messages(message_group_uuid):
     else:
       return model['data'], 200
   except TokenVerifyError as e:
-    # authenticated request
+    # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
 
