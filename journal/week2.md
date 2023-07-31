@@ -1,5 +1,5 @@
 # Week 2 — Distributed Tracing
-![]()
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/week2.png)
 
 ### Required Homework
 
