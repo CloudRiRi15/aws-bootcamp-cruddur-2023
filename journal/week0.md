@@ -408,8 +408,10 @@ Using the step by step guide from Chirag's [Video](https://www.youtube.com/watch
 **to insert lucid chart architectural image as proof of work done**
 
 ### Use EventBridge to hook up Health Dashboard to SNS and send notification when there is a service health issue
+*to be completed*
 
 ### Review each question in each pillar of the Well-Architected Tool (No specialised lens)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/Well-Architected-Tool%20HW%20Challenge.png)
 
 
 
