@@ -1,6 +1,6 @@
 # Week 1 — App Containerization
 
-![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-1%20imgs/.png)
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-1%20imgs/week1.png)
 
 ## Required Homework/Tasks
 
