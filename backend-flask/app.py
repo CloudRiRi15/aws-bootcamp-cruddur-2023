@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 import os
 import sys
 
+from services.users_short import *
 from services.home_activities import *
 from services.notifications_activities import *
 from services.user_activities import *
@@ -14,7 +15,6 @@ from services.message_groups import *
 from services.messages import *
 from services.create_message import *
 from services.show_activity import *
-
 
 from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
 
@@ -106,7 +106,7 @@ cors = CORS(
 
 # Rollbar ----------
 rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
-#@app.before_first_request
+@app.before_first_request
 def init_rollbar():
     """init rollbar module"""
     rollbar.init(
@@ -132,8 +132,8 @@ def data_message_groups():
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # authenticated request
-    app.logger.debug("authenticated")
+    # authenicatied request
+    app.logger.debug("authenicated")
     app.logger.debug(claims)
     cognito_user_id = claims['sub']
     model = MessageGroups.run(cognito_user_id=cognito_user_id)
@@ -142,7 +142,7 @@ def data_message_groups():
     else:
       return model['data'], 200
   except TokenVerifyError as e:
-    # unauthenticated request
+    # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
 
@@ -178,8 +178,8 @@ def data_create_message():
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # authenticated request
-    app.logger.debug("authenticated")
+    # authenicatied request
+    app.logger.debug("authenicated")
     app.logger.debug(claims)
     cognito_user_id = claims['sub']
     if message_group_uuid == None:
@@ -203,7 +203,7 @@ def data_create_message():
     else:
       return model['data'], 200
   except TokenVerifyError as e:
-    # unauthenticated request
+    # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
 
@@ -214,15 +214,15 @@ def data_home():
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # authenticated request
-    app.logger.debug("authenticated")
+    # authenicatied request
+    app.logger.debug("authenicated")
     app.logger.debug(claims)
     app.logger.debug(claims['username'])
     data = HomeActivities.run(cognito_user_id=claims['username'])
   except TokenVerifyError as e:
-    # authenticated request
+    # unauthenicatied request
     app.logger.debug(e)
-    app.logger.debug("authenticated")
+    app.logger.debug("unauthenicated")
     data = HomeActivities.run()
   return data, 200
 
