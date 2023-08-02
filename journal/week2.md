@@ -22,53 +22,67 @@ From Honeycomb.io I created a new environment called 'bootcamp'.
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201b.png)  
 
 **Connecting to Honeycomb.io**
+
 I got an API key from Honeycomb.io, and saved this key as an environment variable in my Gitpod.
+
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201c.png)  ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201d.png)
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201e.png)
 
 **Configuring OTEL**
+
 I made some additions in the `docker-compose.yml` file, to include OTEL settings.This allowed me to send data to Honeycomb.io.
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201f.png)
 
 **Backend Instrumentation**
+
 I set up Honeycomb and OTEL for the backend part of our application making it possible to monitor and analyze what's happening on the server side of our app.
 
-**Installation**
- To get everything working, I followed the quick start guide provided by Honeycomb.io documentation. This involved adding some code to the requirements.txt and App.py files of our project.
+**Getting everything up and running**
+
+To get everything working, I followed the quick start guide provided by Honeycomb.io documentation. This involved adding some code to the requirements.txt and App.py files of our project.
+
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201h.png) 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Distributed%20Tracing%201j.png)
 
 ### X-Ray
 #### Instrument AWS X-Ray and X-Ray Subsegments
 **Adding X-ray Library and Code**
-   I added the AWS X-ray SDK library to the backend application's requirements.
-      ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/X-Ray%201a.png) 
+
+I added the AWS X-ray SDK library to the backend application's requirements.
+![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/X-Ray%201a.png) 
 
 **Create a Sampling Rule**
+
 A sampling rule helps one determine which requests should be captured and traced for analysis in X-ray. I manged to set my own sampling rule for the application.
   
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/X-Ray%201f.png)
    
 **Setup X-ray Daemon and Logged Traces**
+
 I managed to setup X-ray deamon by adding its configuration to my `docker-compose.yml` file. I ran the container and was able to get data (traces) from X-Ray.
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/X-Ray%201g.png)
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/X-Ray%201n.png)
 
 **Adding Subsegment**
+
 The results from X-ray could be further enhanced and I did that by adding subsegments.
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Subseg%202.png)
 
 ### CloudWatch 
+
 ***Configure custom handler to send CloudWatch Logs***
+
 I configured Watchtower by configuring it into our application. Once the configuration was completed I have able to send cloudwatch logs and get results from the CloudWatch consolein my AWs account.
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/CW%20logs%202.png)
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/CW%20logs%204a%20implemented.png)
 
 ### Rollbar
+
 ***Integrate Rollbar and capture and error***
+
 Inorder to use rollbar in our application, I had to first set it up in my Gitpod by adding it to my `requirements.txt` file. I then set the env vars for Rollbar in my Gitpod enviroment.
 
 ![](https://github.com/CloudRiRi15/aws-bootcamp-cruddur-2023/blob/main/journal/assets/week-2%20images/Rollbar%201%20add%20files%20to%20rqmts%20txt.png)
